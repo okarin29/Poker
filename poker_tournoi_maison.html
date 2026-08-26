@@ -303,38 +303,38 @@
 </script>
 
 <div id="modeSelectScreen">
-  <h2>&#9824; Poker Tournoi Maison &#9830;</h2>
-  <button onclick="chooseLocalMode()">Un seul telephone (hote)</button>
-  <button class="back-btn" onclick="showNetworkChoice()">Plusieurs telephones (en reseau)</button>
+  <h2>♠ Poker Tournoi Maison ♦</h2>
+  <button onclick="chooseLocalMode()">📱 Un seul téléphone (hôte)</button>
+  <button class="back-btn" onclick="showNetworkChoice()">🌐 Plusieurs téléphones (en réseau)</button>
 </div>
 
 <div id="networkChoiceScreen">
-  <h2>Partie en reseau</h2>
-  <button onclick="createRoom()">Creer une partie (je suis l'hote)</button>
-  <div class="or-sep">&#8212; ou &#8212;</div>
+  <h2>Partie en réseau</h2>
+  <button onclick="createRoom()">Créer une partie (je suis l'hôte)</button>
+  <div class="or-sep">— ou —</div>
   <input type="text" id="joinCodeInput" placeholder="Code de la partie (4 chiffres)" maxlength="4" inputmode="numeric">
   <button onclick="joinRoom()">Rejoindre une partie</button>
-  <button class="back-btn" onclick="backToModeSelect()">Retour</button>
+  <button class="back-btn" onclick="backToModeSelect()">◀ Retour</button>
 </div>
 
 <div id="hostRoomCodeScreen">
-  <h2>Partie creee !</h2>
-  <p>Donne ce code aux autres joueurs pour qu'ils rejoignent depuis leur telephone :</p>
+  <h2>Partie créée !</h2>
+  <p>Donne ce code aux autres joueurs pour qu'ils rejoignent depuis leur téléphone :</p>
   <div id="roomCodeDisplay">0000</div>
-  <p>Configure ensuite le tournoi normalement. Les autres joueurs pourront choisir leur nom des que tu auras saisi la liste des joueurs.</p>
-  <button onclick="proceedToSetupFromHost()">Continuer la configuration</button>
+  <p>Configure ensuite le tournoi normalement. Les autres joueurs pourront choisir leur nom dès que tu auras saisi la liste des joueurs.</p>
+  <button onclick="proceedToSetupFromHost()">Continuer la configuration ▶</button>
 </div>
 
 <div id="waitingForHostScreen">
-  <h2>En attente de l'hote...</h2>
-  <p>L'hote configure la partie sur son telephone. Reste sur cet ecran, la suite s'affichera automatiquement.</p>
+  <h2>En attente de l'hôte...</h2>
+  <p>L'hôte configure la partie sur son téléphone. Reste sur cet écran, la suite s'affichera automatiquement.</p>
 </div>
 
 <div id="setup">
-  <h2>&#9824; Poker Tournoi Maison &#9830;</h2>
-  <label>Nombre de joueurs (2 a 10)</label>
+  <h2>♠ Poker Tournoi Maison ♦</h2>
+  <label>Nombre de joueurs (2 à 10)</label>
   <input type="number" id="numPlayers" min="2" max="10" value="6">
-  <label>Buy-in (montant reel par joueur, ex: 10 euros)</label>
+  <label>Buy-in (montant réel par joueur, ex: 10€)</label>
   <input type="number" id="buyIn" value="10">
 
   <div class="bb-choice-row">
@@ -346,68 +346,68 @@
     <span>100BB</span>
   </div>
 
-  <label>Duree par niveau de blindes (minutes)</label>
+  <label>Durée par niveau de blindes (minutes)</label>
   <input type="number" id="levelDuration" value="15">
 
   <div class="toggle-row">
-    <span>Repartition automatique du prizepool</span>
+    <span>Répartition automatique du prizepool</span>
     <label class="switch">
       <input type="checkbox" id="prizepoolToggle" onchange="togglePrizepoolPanel()">
       <span class="slider-pill"></span>
     </label>
   </div>
   <div id="prizepoolPanel">
-    <label>1ere place</label>
+    <label>1ère place</label>
     <div class="amount-row"><input type="number" id="payout1" value="50"><div class="percent-sign">%</div></div>
-    <label>2eme place</label>
+    <label>2ème place</label>
     <div class="amount-row"><input type="number" id="payout2" value="30"><div class="percent-sign">%</div></div>
-    <label>3eme place</label>
+    <label>3ème place</label>
     <div class="amount-row"><input type="number" id="payout3" value="20"><div class="percent-sign">%</div></div>
   </div>
 
-  <button onclick="goToNamesScreen()">Suivant : noms des joueurs</button>
+  <button onclick="goToNamesScreen()">Suivant : noms des joueurs ▶</button>
 </div>
 
 <div id="namesSetup">
-  <h2>Qui joue a la table ?</h2>
+  <h2>Qui joue à la table ?</h2>
   <div id="nameFieldsContainer"></div>
-  <button onclick="finalizeSetupAndAskDealer()">Demarrer le tournoi</button>
-  <button class="back-btn" onclick="goBackToSetup()">Retour</button>
+  <button onclick="finalizeSetupAndAskDealer()">Démarrer le tournoi</button>
+  <button class="back-btn" onclick="goBackToSetup()">◀ Retour</button>
 </div>
 
 <div id="standingsScreen">
-  <h2>Classement final</h2>
+  <h2>🏁 Classement final</h2>
   <table>
     <thead><tr><th>#</th><th>Joueur</th><th>Jetons</th><th>Valeur</th><th>Payout</th></tr></thead>
     <tbody id="standingsBody"></tbody>
   </table>
-  <button onclick="backToTableFromStandings()">Retour a la table</button>
-  <button onclick="showStats()">Statistiques des joueurs</button>
-  <button class="danger-btn" onclick="startNewTournament()">Nouveau tournoi</button>
+  <button onclick="backToTableFromStandings()">◀ Retour à la table</button>
+  <button onclick="showStats()">📊 Statistiques des joueurs</button>
+  <button class="danger-btn" onclick="startNewTournament()">Nouveau tournoi ♻</button>
 </div>
 
 <div id="statsScreen">
-  <h2>Statistiques des joueurs</h2>
+  <h2>📊 Statistiques des joueurs</h2>
   <table>
-    <thead><tr><th>Joueur</th><th>Mains gagnees/mains jouees</th><th>Plus gros pot</th><th>Fois all-in</th></tr></thead>
+    <thead><tr><th>Joueur</th><th>Mains gagnées/mains jouées</th><th>Plus gros pot</th><th>Fois all-in</th></tr></thead>
     <tbody id="statsBody"></tbody>
   </table>
-  <button onclick="backToStandingsFromStats()">Retour au classement</button>
+  <button onclick="backToStandingsFromStats()">◀ Retour au classement</button>
 </div>
 
 <div id="tableWrap">
   <div class="topbar">
-    <div class="title" id="tableTitle">Table Maison - No Limit Holdem</div>
+    <div class="title" id="tableTitle">Table Maison — No Limit Holdem</div>
     <div class="stats">
       <span>Main <b id="handNum">1</b></span>
       <span>Blindes <b id="blindsDisplay">100/200</b></span>
       <span>Street <b id="streetDisplay">PREFLOP</b></span>
-      <span>Buy-in <b id="buyInDisplay">10 &euro;</b></span>
-      <span id="blindTimerRow">Niveau <b id="levelDisplay">1</b> - <b id="blindTimerDisplay">15:00</b></span>
+      <span>Buy-in <b id="buyInDisplay">10 €</b></span>
+      <span id="blindTimerRow">Niveau <b id="levelDisplay">1</b> — <b id="blindTimerDisplay">15:00</b></span>
     </div>
   </div>
 
-  <div id="networkBadge">Partie en reseau</div>
+  <div id="networkBadge">🌐 Partie en réseau</div>
 
   <div id="feltOuter">
     <div id="felt">
@@ -426,21 +426,21 @@
   <div id="log"></div>
 
   <div class="controls-row">
-    <button class="control-btn pause host-only" id="pauseBtn" onclick="togglePause()">Mettre en pause</button>
-    <button class="control-btn host-only" onclick="openEditBlindsModal()">Regler les blindes</button>
-    <button class="control-btn add host-only" onclick="openAddPlayerModal()">Ajouter un joueur</button>
-    <button class="control-btn host-only" onclick="openRemovePlayerModal()">Retirer un joueur</button>
-    <button class="control-btn host-only" onclick="openEditStackModal()">Corriger un stack</button>
-    <button class="control-btn host-only" onclick="askResetAll()">Reinitialiser tout</button>
-    <button class="control-btn end host-only" onclick="showStandings()">Terminer le tournoi</button>
+    <button class="control-btn pause host-only" id="pauseBtn" onclick="togglePause()">⏸ Mettre en pause</button>
+    <button class="control-btn host-only" onclick="openEditBlindsModal()">⚙ Régler les blindes</button>
+    <button class="control-btn add host-only" onclick="openAddPlayerModal()">➕ Ajouter un joueur</button>
+    <button class="control-btn host-only" onclick="openRemovePlayerModal()">🚪 Retirer un joueur</button>
+    <button class="control-btn host-only" onclick="openEditStackModal()">✏ Corriger un stack</button>
+    <button class="control-btn host-only" onclick="askResetAll()">Réinitialiser tout ♻</button>
+    <button class="control-btn end host-only" onclick="showStandings()">Terminer le tournoi 🏁</button>
   </div>
 </div>
 
 <div id="actionBar" style="display:none;">
   <div id="topRowInfo">
-    <span>A suivre : <b id="toCallLabel">0</b></span>
-    <span id="turnPlayerLabel">-</span>
-    <button id="undoBtn" class="host-only" onclick="undoLastAction()" disabled>Annuler</button>
+    <span>À suivre : <b id="toCallLabel">0</b></span>
+    <span id="turnPlayerLabel">—</span>
+    <button id="undoBtn" class="host-only" onclick="undoLastAction()" disabled>↩ Annuler</button>
   </div>
 
   <div id="quickPctPreflop" style="display:none;">
@@ -484,20 +484,20 @@
 
 <div id="recaveOverlay">
   <div id="recaveBox">
-    <p id="recaveText">Joueur a 0 jeton</p>
+    <p id="recaveText">Joueur à 0 jeton</p>
     <div class="recave-amount-row">
       <input type="number" id="recaveAmount" placeholder="Montant de la recave" oninput="updateRecavePreview()">
-      <div class="euro-sign">&euro;</div>
+      <div class="euro-sign">€</div>
     </div>
     <div id="recaveChipsPreview">= 0 jetons</div>
     <button id="recaveConfirm" onclick="confirmRecave()">Recaver</button>
-    <button id="recaveEliminate" onclick="eliminatePlayer()">Eliminer du tournoi</button>
+    <button id="recaveEliminate" onclick="eliminatePlayer()">Éliminer du tournoi</button>
   </div>
 </div>
 
 <div id="dealerPickOverlay">
   <div id="dealerPickBox">
-    <p>Quel joueur a le bouton pour la premiere main ? (carte la plus haute tiree)</p>
+    <p>Quel joueur a le bouton pour la première main ? (carte la plus haute tirée)</p>
     <select id="dealerPickSelect"></select>
     <button id="dealerPickConfirm" onclick="confirmDealerPick()">Confirmer</button>
   </div>
@@ -509,19 +509,19 @@
     <input type="text" id="addPlayerName" placeholder="Nom du joueur">
     <div class="recave-amount-row">
       <input type="number" id="addPlayerAmount" placeholder="Montant du buy-in" oninput="updateAddPlayerPreview()">
-      <div class="euro-sign">&euro;</div>
+      <div class="euro-sign">€</div>
     </div>
     <div id="addPlayerChipsPreview">= 0 jetons</div>
-    <label>Position a la table</label>
+    <label>Position à la table</label>
     <select id="addPlayerSeatSelect"></select>
-    <button id="addPlayerConfirm" onclick="confirmAddPlayer()">Ajouter a la table</button>
+    <button id="addPlayerConfirm" onclick="confirmAddPlayer()">Ajouter à la table</button>
     <button id="addPlayerCancel" onclick="document.getElementById('addPlayerOverlay').style.display='none'">Annuler</button>
   </div>
 </div>
 
 <div id="removePlayerOverlay">
   <div id="removePlayerBox">
-    <p>Quel joueur quitte la table ? (sortie volontaire, sans etre elimine)</p>
+    <p>Quel joueur quitte la table ? (sortie volontaire, sans être éliminé)</p>
     <select id="removePlayerSelect"></select>
     <button id="removePlayerConfirm" onclick="confirmRemovePlayer()">Confirmer la sortie</button>
     <button id="removePlayerCancel" onclick="document.getElementById('removePlayerOverlay').style.display='none'">Annuler</button>
@@ -540,12 +540,12 @@
 
 <div id="editBlindsOverlay">
   <div id="editBlindsBox">
-    <p>Regler manuellement les blindes et le temps du niveau en cours</p>
+    <p>Régler manuellement les blindes et le temps du niveau en cours</p>
     <label>Petite blinde</label>
     <input type="number" id="editBlindSmall">
     <label>Grosse blinde</label>
     <input type="number" id="editBlindBig">
-    <label>Duree du niveau (minutes, redemarre le compte a rebours)</label>
+    <label>Durée du niveau (minutes, redémarre le compte à rebours)</label>
     <input type="number" id="editBlindDuration">
     <button id="editBlindsConfirm" onclick="confirmEditBlinds()">Appliquer</button>
     <button id="editBlindsCancel" onclick="document.getElementById('editBlindsOverlay').style.display='none'">Annuler</button>
@@ -554,7 +554,7 @@
 
 <div id="resumeOverlay">
   <div id="resumeBox">
-    <p>Une partie en cours a ete trouvee sur cet appareil. Veux-tu la reprendre ou tu t'etais arrete ?</p>
+    <p>Une partie en cours a été trouvée sur cet appareil. Veux-tu la reprendre où tu t'étais arrêté ?</p>
     <button id="resumeYes" onclick="resumeSavedGame()">Reprendre la partie</button>
     <button id="resumeNo" onclick="discardSavedGame()">Nouvelle partie</button>
   </div>
@@ -562,7 +562,7 @@
 
 <div id="winnerModalOverlay">
   <div id="winnerModalBox">
-    <div id="winnerBoxIntro">Showdown ! Selectionne le(s) gagnant(s) de la main pour distribuer le pot :</div>
+    <div id="winnerBoxIntro">Showdown ! Sélectionne le(s) gagnant(s) de la main pour distribuer le pot :</div>
     <div id="potLayersContainer"></div>
     <button id="layerConfirmBtn" onclick="confirmLayerWinners()" style="display:none;">Valider ce pot</button>
   </div>
@@ -570,9 +570,9 @@
 
 <div id="pickIdentityOverlay">
   <div id="pickIdentityBox">
-    <p>Qui es-tu a cette table ?</p>
+    <p>Qui es-tu à cette table ?</p>
     <select id="identityPlayerSelect"></select>
-    <button id="confirmIdentityBtn" onclick="confirmIdentity()">C'est moi</button>
+    <button id="confirmIdentityBtn" onclick="confirmIdentity()">C'est moi ▶</button>
   </div>
 </div>
 
@@ -612,7 +612,7 @@ let gameLog = [];
 const BET_STEP = 10;
 const SAVE_KEY = 'pokerTournoiMaisonSave_v7';
 
-/* ---------- Reseau (mode multi-telephones) ---------- */
+/* ---------- Réseau (mode multi-téléphones) ---------- */
 let gameMode = null; // 'local' | 'network'
 let isHost = false;
 let myPlayerId = null;
@@ -675,7 +675,7 @@ function togglePrizepoolPanel() {
   document.getElementById('prizepoolPanel').style.display = on ? 'block' : 'none';
 }
 
-/* ---------- Selection du mode ---------- */
+/* ---------- Sélection du mode ---------- */
 function applyHostOnlyVisibility() {
   const show = (gameMode !== 'network') || isHost;
   document.querySelectorAll('.host-only').forEach(el => { el.classList.toggle('hidden-by-role', !show); });
@@ -703,7 +703,7 @@ function getStateRef() { return window.fbDatabase.ref('tables/' + roomCode + '/s
 function getPendingRef() { return window.fbDatabase.ref('tables/' + roomCode + '/pendingActions'); }
 
 function createRoom() {
-  if (!window.fbReady) { showModal("Connexion au serveur non prete, ressaie dans un instant.", () => {}); return; }
+  if (!window.fbReady) { showModal("Connexion au serveur non prête, ressaie dans un instant.", () => {}); return; }
   gameMode = 'network'; isHost = true;
   roomCode = String(Math.floor(1000 + Math.random() * 9000));
   applyHostOnlyVisibility();
@@ -720,9 +720,9 @@ function proceedToSetupFromHost() {
 }
 
 function joinRoom() {
-  if (!window.fbReady) { showModal("Connexion au serveur non prete, ressaie dans un instant.", () => {}); return; }
+  if (!window.fbReady) { showModal("Connexion au serveur non prête, ressaie dans un instant.", () => {}); return; }
   const code = document.getElementById('joinCodeInput').value.trim();
-  if (!/^[0-9]{4}$/.test(code)) { showModal("Entre un code valide a 4 chiffres.", () => {}); return; }
+  if (!/^[0-9]{4}$/.test(code)) { showModal("Entre un code valide à 4 chiffres.", () => {}); return; }
   gameMode = 'network'; isHost = false; roomCode = code;
   applyHostOnlyVisibility();
   document.getElementById('networkChoiceScreen').style.display = 'none';
@@ -825,7 +825,7 @@ function applyRemoteState(data) {
 
   buildSeatElements();
   document.getElementById('blindsDisplay').textContent = smallBlind + "/" + bigBlind;
-  document.getElementById('buyInDisplay').textContent = buyIn + " \u20ac";
+  document.getElementById('buyInDisplay').textContent = buyIn + " €";
 
   if (data.winnerBoxVisible) {
     if (gameMode !== 'network' || isHost) {
@@ -842,7 +842,7 @@ function applyRemoteState(data) {
   applyingRemoteUpdate = false;
 }
 
-/* ---------- Modal generique ---------- */
+/* ---------- Modal générique ---------- */
 function showModal(text, onConfirm) {
   const overlay = document.getElementById('modalOverlay');
   document.getElementById('modalText').textContent = text;
@@ -858,7 +858,7 @@ function showModal(text, onConfirm) {
 }
 
 function askResetAll() {
-  showModal("Reinitialiser completement le tournoi ? Toutes les mises et stacks seront perdus.", () => {
+  showModal("Réinitialiser complètement le tournoi ? Toutes les mises et stacks seront perdus.", () => {
     localStorage.removeItem(SAVE_KEY);
     clearInterval(blindTimerInterval);
     startNewTournament();
@@ -883,20 +883,20 @@ function togglePause() {
     clearInterval(blindTimerInterval);
     pausedRemainingMs = levelEndTimestamp ? Math.max(0, levelEndTimestamp - Date.now()) : 0;
     isPaused = true;
-    document.getElementById('pauseBtn').textContent = "Reprendre le tournoi";
+    document.getElementById('pauseBtn').textContent = "▶ Reprendre le tournoi";
     document.getElementById('blindTimerDisplay').textContent = "PAUSE";
-    log("Tournoi mis en pause. Le minuteur de blindes est gele.");
+    log("⏸ Tournoi mis en pause. Le minuteur de blindes est gelé.");
   } else {
     levelEndTimestamp = Date.now() + pausedRemainingMs;
     isPaused = false;
-    document.getElementById('pauseBtn').textContent = "Mettre en pause";
+    document.getElementById('pauseBtn').textContent = "⏸ Mettre en pause";
     startBlindTimerInterval();
-    log("Reprise du tournoi.");
+    log("▶ Reprise du tournoi.");
   }
   saveState();
 }
 
-/* ---------- Reglage manuel des blindes ---------- */
+/* ---------- Réglage manuel des blindes ---------- */
 function openEditBlindsModal() {
   document.getElementById('editBlindSmall').value = smallBlind;
   document.getElementById('editBlindBig').value = bigBlind;
@@ -916,12 +916,12 @@ function confirmEditBlinds() {
   currentLevel = findLevelForBigBlind(newBB);
   document.getElementById('blindsDisplay').textContent = smallBlind + "/" + bigBlind;
   if (isPaused) { pausedRemainingMs = newDuration * 60000; } else { levelEndTimestamp = Date.now() + newDuration * 60000; }
-  log("Blindes reglees manuellement a " + smallBlind + "/" + bigBlind + " (niveau " + currentLevel + ", redemarre pour " + newDuration + " min).");
+  log("⚙ Blindes réglées manuellement à " + smallBlind + "/" + bigBlind + " (niveau " + currentLevel + ", redémarré pour " + newDuration + " min).");
   document.getElementById('editBlindsOverlay').style.display = 'none';
   saveState();
 }
 
-/* ---------- Sauvegarde (locale ou reseau) ---------- */
+/* ---------- Sauvegarde (locale ou réseau) ---------- */
 function saveState() {
   if (gameMode === 'network') {
     if (isHost && !applyingRemoteUpdate && window.fbReady) {
@@ -957,12 +957,12 @@ function resumeSavedGame() {
   document.getElementById('tableWrap').style.display = 'block';
   buildSeatElements();
   if (isPaused) {
-    document.getElementById('pauseBtn').textContent = "Reprendre le tournoi";
+    document.getElementById('pauseBtn').textContent = "▶ Reprendre le tournoi";
     document.getElementById('blindTimerDisplay').textContent = "PAUSE";
   } else {
     startBlindTimerInterval();
   }
-  log("Partie reprise automatiquement.");
+  log("↻ Partie reprise automatiquement.");
 }
 
 /* ---------- Classement final et statistiques ---------- */
@@ -977,14 +977,14 @@ function showStandings() {
   body.innerHTML = '';
   finalList.forEach((p, i) => {
     const value = (p.stack / chipsPerUnit).toFixed(2);
-    const tag = p.eliminated ? ' (elimine)' : (p.removed ? ' (sorti)' : '');
+    const tag = p.eliminated ? ' (éliminé)' : (p.removed ? ' (sorti)' : '');
     let payoutCell = '-';
     if (prizepoolEnabled && payoutPercents[i]) {
       const amount = totalMoneyCollected * payoutPercents[i] / 100;
-      payoutCell = amount.toFixed(2) + ' \u20ac';
+      payoutCell = amount.toFixed(2) + ' €';
     }
     const tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + (i + 1) + '</td><td>' + p.name + tag + '</td><td>' + fmt(p.stack) + '</td><td>' + value + ' \u20ac</td><td>' + payoutCell + '</td>';
+    tr.innerHTML = '<td>' + (i + 1) + '</td><td>' + p.name + tag + '</td><td>' + fmt(p.stack) + '</td><td>' + value + ' €</td><td>' + payoutCell + '</td>';
     body.appendChild(tr);
   });
   document.getElementById('tableWrap').style.display = 'none';
@@ -1031,7 +1031,7 @@ function showNextRecave() {
     return;
   }
   const p = players[bustedQueue[0]];
-  document.getElementById('recaveText').textContent = p.name + " est a 0 jeton. Recave ou elimination ?";
+  document.getElementById('recaveText').textContent = p.name + " est à 0 jeton. Recave ou élimination ?";
   document.getElementById('recaveAmount').value = buyIn;
   updateRecavePreview();
   document.getElementById('recaveOverlay').style.display = 'flex';
@@ -1042,11 +1042,11 @@ function confirmRecave() {
   const p = players[idx];
   const amount = parseFloat(document.getElementById('recaveAmount').value) || 0;
   const chips = Math.round(amount * chipsPerUnit);
-  if (chips <= 0) { log("Montant de recave invalide pour " + p.name + "."); showNextRecave(); return; }
+  if (chips <= 0) { log("⚠ Montant de recave invalide pour " + p.name + "."); showNextRecave(); return; }
   p.stack += chips;
   p.eliminated = false;
   totalMoneyCollected += amount;
-  log(p.name + " recave " + amount + " euros -> +" + fmt(chips) + " jetons (stack: " + fmt(p.stack) + ")");
+  log("💰 " + p.name + " recave " + amount + " € → +" + fmt(chips) + " jetons (stack: " + fmt(p.stack) + ")");
   showNextRecave();
 }
 
@@ -1055,7 +1055,7 @@ function eliminatePlayer() {
   const p = players[idx];
   p.eliminated = true;
   eliminationOrder.push(p.id);
-  log(p.name + " est elimine definitivement du tournoi et retire de la table.");
+  log("💀 " + p.name + " est éliminé définitivement du tournoi et retiré de la table.");
   buildSeatElements();
   showNextRecave();
 }
@@ -1081,12 +1081,12 @@ function openAddPlayerModal() {
   ordered.forEach(p => {
     const opt = document.createElement('option');
     opt.value = p.id;
-    opt.textContent = "Apres " + p.name;
+    opt.textContent = "Après " + p.name;
     seatSelect.appendChild(opt);
   });
   const lastOpt = document.createElement('option');
   lastOpt.value = 'end';
-  lastOpt.textContent = "Derniere position (avant le donneur)";
+  lastOpt.textContent = "Dernière position (avant le donneur)";
   lastOpt.selected = true;
   seatSelect.appendChild(lastOpt);
   document.getElementById('addPlayerOverlay').style.display = 'flex';
@@ -1102,7 +1102,7 @@ function confirmAddPlayer() {
   const name = document.getElementById('addPlayerName').value.trim() || ("Joueur " + (players.length + 1));
   const amount = parseFloat(document.getElementById('addPlayerAmount').value) || 0;
   const chips = Math.round(amount * chipsPerUnit);
-  if (chips <= 0) { log("Montant de buy-in invalide, joueur non ajoute."); return; }
+  if (chips <= 0) { log("⚠ Montant de buy-in invalide, joueur non ajouté."); return; }
 
   const seatChoice = document.getElementById('addPlayerSeatSelect').value;
   const ordered = players.filter(p => !p.eliminated && !p.removed).sort((a, b) => a.seatOrder - b.seatOrder);
@@ -1125,7 +1125,7 @@ function confirmAddPlayer() {
     handsPlayed: 0, handsWon: 0, handsPastPreflop: 0, biggestPotWon: 0, timesAllIn: 0
   });
   totalMoneyCollected += amount;
-  log(name + " rejoint la table avec " + fmt(chips) + " jetons (buy-in de " + amount + " euros). Il jouera a partir de la prochaine main.");
+  log("➕ " + name + " rejoint la table avec " + fmt(chips) + " jetons (buy-in de " + amount + " €). Il jouera à partir de la prochaine main.");
   document.getElementById('addPlayerOverlay').style.display = 'none';
   buildSeatElements();
   updateUI();
@@ -1152,7 +1152,7 @@ function confirmRemovePlayer() {
   if (p.inHand && !p.folded) { p.folded = true; actedThisRound.add(id); }
   p.removed = true;
   p.inHand = false;
-  log(p.name + " quitte la table avec " + fmt(p.stack) + " jetons (sortie volontaire, pas une elimination).");
+  log("🚪 " + p.name + " quitte la table avec " + fmt(p.stack) + " jetons (sortie volontaire, pas une élimination).");
   document.getElementById('removePlayerOverlay').style.display = 'none';
   buildSeatElements();
   if (wasCurrentActor) { checkBettingRound(); } else { updateUI(); }
@@ -1185,7 +1185,7 @@ function confirmEditStack() {
   if (!p || isNaN(newVal) || newVal < 0) { showModal("Valeur invalide.", () => {}); return; }
   const old = p.stack;
   p.stack = newVal;
-  log("Stack de " + p.name + " corrige : " + fmt(old) + " -> " + fmt(newVal) + " jetons.");
+  log("✏ Stack de " + p.name + " corrigé : " + fmt(old) + " → " + fmt(newVal) + " jetons.");
   document.getElementById('editStackOverlay').style.display = 'none';
   updateUI();
 }
@@ -1213,12 +1213,12 @@ function undoLastAction() {
   handNum = s.handNum;
   document.getElementById('actionBar').style.display = 'block';
   document.getElementById('undoBtn').disabled = historyStack.length === 0;
-  log("Derniere action annulee.");
+  log("↩ Dernière action annulée.");
   buildSeatElements();
   updateUI();
 }
 
-/* ---------- Setup en 2 ecrans ---------- */
+/* ---------- Setup en 2 écrans ---------- */
 function goToNamesScreen() {
   const n = parseInt(document.getElementById('numPlayers').value);
   const buyInVal = parseFloat(document.getElementById('buyIn').value) || 1;
@@ -1306,9 +1306,9 @@ function confirmDealerPick() {
   historyStack = [];
   document.getElementById('tableWrap').style.display = 'block';
   document.getElementById('actionBar').style.display = 'block';
-  document.getElementById('pauseBtn').textContent = "Mettre en pause";
+  document.getElementById('pauseBtn').textContent = "⏸ Mettre en pause";
   document.getElementById('blindsDisplay').textContent = smallBlind + "/" + bigBlind;
-  document.getElementById('buyInDisplay').textContent = buyIn + " \u20ac";
+  document.getElementById('buyInDisplay').textContent = buyIn + " €";
 
   levelEndTimestamp = Date.now() + levelDurationMinutes * 60000;
   startBlindTimerInterval();
@@ -1339,7 +1339,7 @@ function tickBlindTimer() {
     applyBlindLevel(currentLevel);
     levelEndTimestamp = Date.now() + levelDurationMinutes * 60000;
     document.getElementById('blindsDisplay').textContent = smallBlind + "/" + bigBlind;
-    log("Niveau " + currentLevel + " : les blindes passent a " + smallBlind + "/" + bigBlind + ".");
+    log("⏫ Niveau " + currentLevel + " : les blindes passent à " + smallBlind + "/" + bigBlind + ".");
     remainingMs = levelEndTimestamp - Date.now();
     saveState();
   }
@@ -1350,7 +1350,7 @@ function tickBlindTimer() {
   document.getElementById('blindTimerDisplay').textContent = mm + ":" + (ss < 10 ? '0' : '') + ss;
 }
 
-/* ---------- Sieges (seatOrder) ---------- */
+/* ---------- Sièges (seatOrder) ---------- */
 function buildSeatElements() {
   const felt = document.getElementById('felt');
   document.querySelectorAll('.seat').forEach(el => el.remove());
@@ -1382,7 +1382,7 @@ function buildSeatElements() {
   });
 }
 
-/* ---------- Main : blindes, regle heads-up ---------- */
+/* ---------- Main : blindes, règle heads-up ---------- */
 function startHand() {
   street = 0; pot = 0; actedThisRound = new Set();
   historyStack = [];
@@ -1399,7 +1399,7 @@ function startHand() {
 
   const activePlayers = players.filter(p => p.inHand);
   if (activePlayers.length < 2) {
-    log("Pas assez de joueurs avec des jetons pour continuer.");
+    log("⚠ Pas assez de joueurs avec des jetons pour continuer.");
     document.getElementById('actionBar').style.display = 'none';
     return;
   }
@@ -1421,7 +1421,7 @@ function startHand() {
   currentIndex = nextActiveIndex(bbIndex);
 
   document.getElementById('handNum').textContent = handNum;
-  log("Main " + handNum + " - Dealer: " + players[dealerIndex].name + " - SB: " + players[sbIndex].name + " - BB: " + players[bbIndex].name);
+  log("— Main " + handNum + " — Dealer: " + players[dealerIndex].name + " — SB: " + players[sbIndex].name + " — BB: " + players[bbIndex].name);
   updateUI();
 }
 
@@ -1582,7 +1582,7 @@ function quickMultiple(mult) {
   refreshBetLabel(target);
 }
 
-/* ---------- Actions joueurs (redirigees vers Firebase si non-hote en reseau) ---------- */
+/* ---------- Actions joueurs (redirigées vers Firebase si non-hôte en réseau) ---------- */
 function doFold() {
   if (gameMode === 'network' && !isHost) { sendPendingAction('fold', 0); return; }
   pushHistory();
@@ -1633,7 +1633,7 @@ function doBetOrRaise() {
     actedThisRound = new Set([currentIndex]);
   }
   if (p.stack === 0) markAllIn(p);
-  log(p.name + " mise/relance a " + fmt(targetTotal) + (p.allIn ? " (ALL-IN)" : ""));
+  log(p.name + " mise/relance à " + fmt(targetTotal) + (p.allIn ? " (ALL-IN)" : ""));
   checkBettingRound();
 }
 
@@ -1678,10 +1678,10 @@ function advanceStreetOrShowdown() {
     players.forEach(p => p.currentBet = 0);
     highestBet = 0; minRaise = bigBlind; actedThisRound = new Set();
     currentIndex = nextActiveIndex(dealerIndex);
-    log("Passage automatique a la street : " + streets[street]);
+    log("→ Passage automatique à la street : " + streets[street]);
     updateUI();
   } else {
-    log("Fin de la derniere street de mises (RIVER). Showdown.");
+    log("Fin de la dernière street de mises (RIVER). Showdown.");
     showWinnerBox();
   }
 }
@@ -1691,7 +1691,7 @@ function fastForwardAllIn() {
   while (street < 3) {
     street++;
     players.forEach(p => p.currentBet = 0);
-    log(streets[street] + " revele automatiquement (joueurs all-in, plus de mises possibles).");
+    log("→ " + streets[street] + " révélé automatiquement (joueurs all-in, plus de mises possibles).");
   }
   highestBet = 0;
   updateUI();
@@ -1702,7 +1702,7 @@ function autoAwardSingleWinner(winner) {
   winner.stack += pot;
   winner.handsWon++;
   winner.biggestPotWon = Math.max(winner.biggestPotWon, pot);
-  log(winner.name + " remporte le pot de " + fmt(pot) + " jetons (tous les autres se sont couches).");
+  log("🏆 " + winner.name + " remporte le pot de " + fmt(pot) + " jetons (tous les autres se sont couchés).");
   pot = 0;
   updateUI();
   document.getElementById('actionBar').style.display = 'none';
@@ -1732,7 +1732,7 @@ function computeSidePots() {
       if (refundPlayer) {
         refundPlayer.stack += active[0].remaining;
         pot -= active[0].remaining;
-        log(refundPlayer.name + " recupere " + fmt(active[0].remaining) + " jetons non egalises (mise non suivie).");
+        log("↩ " + refundPlayer.name + " récupère " + fmt(active[0].remaining) + " jetons non égalisés (mise non suivie).");
       }
       active[0].remaining = 0;
       continue;
@@ -1805,8 +1805,8 @@ function renderCurrentLayer() {
   container.appendChild(wrap);
 
   document.getElementById('winnerBoxIntro').textContent = currentPotLayers.length > 1
-    ? "Showdown avec pots partages ! Selectionne le(s) gagnant(s) de ce pot :"
-    : "Showdown ! Selectionne le(s) gagnant(s) de la main pour distribuer le pot :";
+    ? "Showdown avec pots partagés ! Sélectionne le(s) gagnant(s) de ce pot :"
+    : "Showdown ! Sélectionne le(s) gagnant(s) de la main pour distribuer le pot :";
 
   const canDecide = (gameMode !== 'network') || isHost;
   document.getElementById('layerConfirmBtn').style.display = canDecide ? 'inline-block' : 'none';
@@ -1817,7 +1817,7 @@ function confirmLayerWinners() {
   const select = document.getElementById('potLayerSelectCurrent');
   const chosen = Array.from(select.selectedOptions).map(o => parseInt(o.value));
   if (chosen.length === 0) {
-    showModal("Selectionne au moins un gagnant pour ce pot avant de valider.", () => {});
+    showModal("Sélectionne au moins un gagnant pour ce pot avant de valider.", () => {});
     return;
   }
   const layer = currentPotLayers[currentLayerIndex];
@@ -1839,7 +1839,7 @@ function awardLayer(layer, winnerIds, isAuto) {
       p.stack += win;
       p.handsWon++;
       p.biggestPotWon = Math.max(p.biggestPotWon, win);
-      log(p.name + " remporte " + fmt(win) + " jetons" + (isAuto ? " (attribue automatiquement, deja vainqueur du pot precedent)" : "") + ".");
+      log("🏆 " + p.name + " remporte " + fmt(win) + " jetons" + (isAuto ? " (attribué automatiquement, déjà vainqueur du pot précédent)" : "") + ".");
     }
   });
 }
@@ -1860,7 +1860,7 @@ function nextHand() {
   checkBustedPlayers(() => {
     const stillIn = players.filter(p => !p.eliminated && !p.removed);
     if (stillIn.length <= 1) {
-      if (stillIn.length === 1) log(stillIn[0].name + " remporte le tournoi !");
+      if (stillIn.length === 1) log("🎉 " + stillIn[0].name + " remporte le tournoi !");
       document.getElementById('actionBar').style.display = 'none';
       saveState();
       return;
